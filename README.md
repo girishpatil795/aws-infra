@@ -1,6 +1,7 @@
 **Infrastructure**
 
 Based on the understanding, I have created below architecture,
+
 ![alt text](https://github.com/girishpatil795/aws-infra/blob/main/Architecture/aws-eks.jpg?raw=true)
 
 
@@ -11,7 +12,9 @@ Configured below to support the required architecture,
 . NAT Gateway
 . Route Tables
 Created VPC, Internet Gateway and attached IGW to the VPC.
+
 Created  2 public subnets and public route tables connected to above internet gateway. Public subnets are created to facilitate the incoming external traffic.
+
 Created 2 NAT Gateways with elastic IPs and mapped these 2 NAT Gateways to the public subnets. 
 Created 2 private subnets to host EKS worker nodes and the necessary applications. Created 2 private route tables and added the route through respective NAT Gateway and associated private route tables to the respective private subnets.
 Provisioned EKS with 1 VPC, 4 subnets (2 public and 2 private), required IAM roles, NAT Gateways and IGW. 
