@@ -37,9 +37,9 @@ Created ingress rule to allow external traffic with only **/get** and the ingres
 Internal user can perform /post requests with using https://<ClusterIP>/post<br />
 
 **Flow of Traffic** <br />
-An external request to https://mapp.webapp.com/get will first hit the IGW -->ALB-->Ingress-->Service-->Pod
+An external request to https://myapp.webapp.com/get will first hit the IGW -->ALB-->Ingress-->Service-->Pod
 
-A request to https://mapp.webapp.com/post will first hit the Ingress-->Service-->Pod
+A request to https://myapp.webapp.com/post will first hit the Ingress-->Service-->Pod
 
 
 **Assumptions** <br />
