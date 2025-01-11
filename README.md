@@ -42,3 +42,6 @@ An external request to https://mapp.webapp.com/get will first hit the IGW -->ALB
 A request to https://mapp.webapp.com/post will first hit the Ingress-->Service-->Pod
 
 
+**Assumptions** <br />
+
+Assuming that Nginx Ingress Controller has already been deployed. I have not covered deploying Ingress controller.<br />

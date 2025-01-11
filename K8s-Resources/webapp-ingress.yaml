@@ -2,20 +2,36 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: webapp-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
+  rules:
+    - host: letsencrypt.webapp.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: app1-nginx-clusterip-service
+                port: 
+                  number: 80  
+    - host: myapp.webapp.com
+      http:
+        paths:
+          - path: /get
+            pathType: Prefix
+            backend:
+              service:
+                name: sample-app-service
+                port:
+                  number: 443  
   tls:
   - hosts:
     - myapp.webapp.com
-    secretName: tls-secret
-  rules:
-  - host: myapp.webapp.com
-    http:
-      paths:
-      - path: /get
-        pathType: Prefix
-        backend:
-          service:
-            name: sample-app-service
-            port:
-              number: 443              
+    secretName: myapp-tls-secret
+    - letsencrypt.webapp.com
+    secretName: letsencrypt-webapp-secret            
               
