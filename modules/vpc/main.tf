@@ -85,7 +85,7 @@ resource "aws_route_table_association" "pub_rt_b" {
   route_table_id = aws_route_table.pub_rt.id
 }
 
-# create public subnet pri-sub3
+# create private subnet pri-sub3
 
 resource "aws_subnet" "pri_sub3" {
   vpc_id             = aws_vpc.vpc.id
@@ -100,7 +100,7 @@ resource "aws_subnet" "pri_sub3" {
   }
 }
 
-# create public subnet pri-sub4
+# create private subnet pri-sub4
 
 resource "aws_subnet" "pri_sub4" {
   vpc_id            = aws_vpc.vpc.id

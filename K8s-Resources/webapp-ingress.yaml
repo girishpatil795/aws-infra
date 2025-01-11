@@ -3,8 +3,12 @@ kind: Ingress
 metadata:
   name: webapp-ingress
 spec:
+  tls:
+  - hosts:
+    - myapp.webapp.com
+    secretName: tls-secret
   rules:
-  - host: webapp.com
+  - host: myapp.webapp.com
     http:
       paths:
       - path: /get
@@ -13,4 +17,5 @@ spec:
           service:
             name: sample-app-service
             port:
-              number: 80
+              number: 443              
+              
