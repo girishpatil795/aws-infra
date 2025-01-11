@@ -1,6 +1,6 @@
 **Infrastructure**
 
-Based on the understanding, I have created below architecture,
+Based on my understanding with the requirement, I have created below architecture,
 
 ![alt text](https://github.com/girishpatil795/aws-infra/blob/main/Architecture/aws-eks.jpg?raw=true)
 
