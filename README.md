@@ -7,8 +7,8 @@ Based on the understanding, I have created below architecture,
 
 Configured below to support the required architecture,
 
-. VPC
-. Subnets 
+. VPC__
+. Subnets <br />
 . Internet Gateway
 . NAT Gateway
 . Route Tables
