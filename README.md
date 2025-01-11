@@ -31,9 +31,9 @@ I have also included the K8s yamls files in the same repo, however in actual use
 
 
 **K8s Applications** 
-Created a deployment to host webapp with container image ### kennethreitz/httpbin (assuming that the image is available publicly) and with 2 replicas.<br />
+Created a deployment to host webapp with container image **kennethreitz/httpbin** (assuming that the image is available publicly) and with 2 replicas.<br />
 Created a service to expose the webapp with service type as ClusterIP.<br />
-Created ingress rule to allow external traffic with only ### /get and the ingress routes the requests to the associated service that inturn route the requests to webapp.<br />
+Created ingress rule to allow external traffic with only **/get** and the ingress routes the requests to the associated service that inturn route the requests to webapp.<br />
 Internal user can perform /post requests with using https://<ClusterIP>/post<br />
 
 **Flow of Traffic** <br />
