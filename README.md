@@ -45,3 +45,4 @@ A request to https://myapp.webapp.com/post will first hit the Ingress-->Service-
 **Assumptions** <br />
 
 Assuming that Nginx Ingress Controller has already been deployed. I have not covered deploying Ingress controller.<br />
+secret myapp-tls-secret is created with tls certificate

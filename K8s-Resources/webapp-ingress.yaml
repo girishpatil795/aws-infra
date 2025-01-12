@@ -8,16 +8,6 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: letsencrypt.webapp.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: app1-nginx-clusterip-service
-                port: 
-                  number: 80  
     - host: myapp.webapp.com
       http:
         paths:
@@ -31,7 +21,5 @@ spec:
   tls:
   - hosts:
     - myapp.webapp.com
-    secretName: myapp-tls-secret
-    - letsencrypt.webapp.com
-    secretName: letsencrypt-webapp-secret            
+    secretName: myapp-tls-secret            
               
