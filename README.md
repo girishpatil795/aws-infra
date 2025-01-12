@@ -33,8 +33,9 @@ I have also included the K8s yamls files in the same repo, however in actual use
 **K8s Applications** 
 Created a deployment to host webapp with container image **kennethreitz/httpbin** (assuming that the image is available publicly) and with 2 replicas.<br />
 Created a service to expose the webapp with service type as ClusterIP.<br />
-Created ingress rule to allow external traffic with only **/get** and the ingress routes the requests to the associated service that inturn route the requests to webapp.<br />
-Internal user can perform /post requests with using https://<ClusterIP>/post<br />
+Created ingress rule to allow external traffic with only **/get** and the ingress routes the requests to the associated service that inturn route the requests to webapp.<br /> . 
+We will be utilizing aws load balancer controller to route the external traffic to ingress. Install aws load balancer using helm as mentioned in text file under k8s-resources directory,<br />
+Internal user can perform /post requests with using https://<ClusterIP>/post or https://myapp.webapp.com/post <br />
 
 **Flow of Traffic** <br />
 An external request to https://myapp.webapp.com/get will first hit the IGW -->ALB-->Ingress-->Service-->Pod
@@ -45,7 +46,8 @@ A request to https://myapp.webapp.com/post will first hit the Ingress-->Service-
 **Assumptions** <br />
 
 Assuming that Nginx Ingress Controller has already been deployed. I have not covered deploying Ingress controller.<br />
-secret myapp-tls-secret is created with tls certificate
+secret myapp-tls-secret is created with tls certificate <br />
+
 
 **Logging and Monitoring** <br />
 
