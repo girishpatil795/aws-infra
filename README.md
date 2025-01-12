@@ -46,3 +46,11 @@ A request to https://myapp.webapp.com/post will first hit the Ingress-->Service-
 
 Assuming that Nginx Ingress Controller has already been deployed. I have not covered deploying Ingress controller.<br />
 secret myapp-tls-secret is created with tls certificate
+
+**Logging and Monitoring** <br />
+
+Will deploy prometheus and grafana in the EKS cluster and use Prometheus to collect the metrics from all the K8s resources and prometheus offers flexible query language for extracting insights from the metrics.
+Then, will integrate Prometheus with Grafana for dashboards and alerting.<br />
+
+Alternatively, we can also use Sysdig that offers Kubernetes monitoring and security capabilities.<br /> 
+It provides detailed visibility into the containers, microservices, and applications, helping to detect and respond to security threats and performance issues.
